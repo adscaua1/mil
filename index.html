@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mil Serralheria | Portões e Estruturas Metálicas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        section {
+            scroll-margin-top: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background: #ffffffee !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            min-height: 80px;
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #198754 !important;
+        }
+
+        .nav-link {
+            color: #222 !important;
+            font-weight: 500;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #198754 !important;
+        }
+
+        .hero {
+            min-height: 100svh;
+            padding-top: 40px;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ddd;
+            max-width: 700px;
+        }
+
+        .btn-main {
+            background: #198754;
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-main:hover {
+            background: #146c43;
+            transform: translateY(-3px);
+            color: #fff;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #198754;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .about-img img,
+        .gallery img {
+            width: 100%;
+            border-radius: 20px;
+            transition: 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.4s;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: #198754;
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .stats {
+            background: #198754;
+            color: #fff;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-box h2 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .testimonial h5 {
+            color: #198754;
+            margin-top: 15px;
+            font-weight: 700;
+        }
+
+        .contact-box {
+            background: #f8f9fa;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-control {
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            background: #111;
+            color: #bbb;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .whatsapp {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            right: 20px;
+            bottom: 20px;
+            background: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        @media(max-width:768px) {
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+
+            .navbar {
+                min-height: 70px;
+            }
+
+            .hero {
+                padding-top: 40px;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mil Serralheria</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item"><a class="nav-link" href="estruturas.html">Estruturas Metálicas</a></li>
+                     <li class="nav-item"><a class="nav-link" href="modelos.html">Modelos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Portões e Estruturas Metálicas de Alta Qualidade</h1>
+
+            <p>
+                A Mil Serralheria oferece soluções modernas em portões,
+                estruturas metálicas, corrimãos, coberturas e projetos personalizados.
+                Atendimento rápido e acabamento profissional.
+            </p>
+
+            <a href="https://wa.me/5511999999999" class="btn-main">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+            </a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 stat-box">
+                    <h2>+500</h2>
+                    <p>Projetos realizados</p>
+                </div>
+
+                <div class="col-md-3 stat-box">
+                    <h2>+10</h2>
+                    <p>Anos de experiência</p>
+                </div>
+
+                <div class="col-md-3 stat-box">
+                    <h2>100%</h2>
+                    <p>Clientes satisfeitos</p>
+                </div>
+
+                <div class="col-md-3 stat-box">
+                    <h2>24h</h2>
+                    <p>Resposta rápida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Sobre a Empresa</h2>
+                <p>Conheça a Mil Serralheria</p>
+            </div>
+
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 about-img">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop"
+                        alt="">
+                </div>
+
+                <div class="col-lg-6 about-text">
+                    <h3>Excelência em serralheria e estruturas metálicas</h3>
+
+                    <p>
+                        Trabalhamos com fabricação e instalação de portões,
+                        grades, corrimãos, coberturas e estruturas metálicas.
+                    </p>
+
+                    <p>
+                        Nosso objetivo é entregar qualidade, segurança e acabamento premium
+                        em todos os projetos.
+                    </p>
+
+                    <a href="https://wa.me/5511999999999" class="btn-main">
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" style="background:#f8f9fa;">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Serviços profissionais para residências e empresas</p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-warehouse"></i>
+                        <h4>Portões Automáticos</h4>
+                        <p>Portões modernos com acabamento profissional.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-border-all"></i>
+                        <h4>Grades</h4>
+                        <p>Proteção e segurança para sua residência.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-building"></i>
+                        <h4>Estruturas Metálicas</h4>
+                        <p>Projetos resistentes e personalizados.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-stairs"></i>
+                        <h4>Corrimãos</h4>
+                        <p>Design moderno e alta durabilidade.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-hammer"></i>
+                        <h4>Soldagem</h4>
+                        <p>Serviços especializados de solda.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-tools"></i>
+                        <h4>Projetos Sob Medida</h4>
+                        <p>Soluções personalizadas para cada cliente.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Galeria de Projetos</h2>
+                <p>Trabalhos realizados pela Mil Serralheria</p>
+            </div>
+
+            <div class="row g-4 gallery">
+                <div class="col-md-4">
+                    <img
+                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
+                </div>
+
+                <div class="col-md-4">
+                    <img
+                        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
+                </div>
+
+                <div class="col-md-4">
+                    <img
+                        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Solicite seu orçamento</h2>
+                <p>Fale conosco agora mesmo</p>
+            </div>
+
+            <div class="contact-box">
+                <div class="row g-5 align-items-center">
+
+                    <div class="col-lg-5">
+                        <h3 class="mb-4">Informações</h3>
+
+                        <p><i class="fas fa-phone text-success"></i> (11) 99999-9999</p>
+                        <p><i class="fas fa-envelope text-success"></i> contato@milserralheria.com.br</p>
+                        <p><i class="fas fa-location-dot text-success"></i> São Paulo - SP</p>
+                        <p><i class="fab fa-instagram text-success"></i> @milserralheria</p>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Mil Serralheria - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const navbarCollapse = document.getElementById('menu');
+
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            document.body.classList.add('menu-open');
+        });
+
+        navbarCollapse.addEventListener('hide.bs.collapse', () => {
+            document.body.classList.remove('menu-open');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
