@@ -8,6 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
@@ -49,7 +50,10 @@
 
         .hero {
             min-height: 55vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+
             display: flex;
             align-items: center;
             justify-content: center;
@@ -68,6 +72,7 @@
             color: #ddd;
             font-size: 1.1rem;
             max-width: 700px;
+            margin-inline: auto;
         }
 
         section {
@@ -199,11 +204,12 @@
             font-size: 2rem;
             z-index: 999;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            transition: .3s;
         }
 
         .whatsapp:hover {
-            color: #fff;
             transform: scale(1.08);
+            color: #fff;
         }
 
         @media(max-width:768px) {
@@ -230,136 +236,210 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Mil Serralheria</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <a class="navbar-brand" href="index.html">
+                Mil Serralheria
+            </a>
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="menu">
+
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="estruturas.html">Estruturas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#contato">Contato</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="estruturas.html">Estruturas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#servicos">Serviços</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contato">Contato</a>
+                    </li>
+
                 </ul>
+
             </div>
         </div>
     </nav>
 
     <section class="hero">
+
         <div class="container">
+
             <h1>Modelos de Portões</h1>
+
             <p>
-                Confira alguns modelos modernos e personalizados desenvolvidos pela Mil Serralheria.
+                Confira alguns modelos modernos e personalizados
+                desenvolvidos pela Mil Serralheria.
             </p>
+
         </div>
+
     </section>
 
     <section>
+
         <div class="container">
 
             <div class="section-title">
+
                 <h2>Nossos Modelos</h2>
-                <p>Clique nas imagens para ampliar e visualizar melhor</p>
+
+                <p>
+                    Clique nas imagens para ampliar e visualizar melhor
+                </p>
+
             </div>
 
             <div class="gallery-grid">
 
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#img1">
-                    <div class="zoom-icon">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                <!-- MODELOS 1 AO 31 -->
 
-                    <img
-                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
+                <script>
+                    const imagens = [
+                        './img/WhatsApp-Image-2026-05-13-at-12.34.18-1024x665.jpeg',
+                        './img/Portao-lindo-1024x576 (1).jpeg',
+                        './img/modelo 3.jpeg',
+                        './img/modelo 4.jpeg',
+                        './img/modelo 5.jpeg',
+                        './img/modelo 6.jpg',
+                        './img/modelo 7.jpeg',
+                        './img/modelo 8.jpg',
+                        './img/modelo 9.jpeg',
+                        './img/modelo 10.jpg',
+                        './img/modelo 11.jpg',
+                        './img/modelo 12.jpeg',
+                        './img/modelo 13.jpg',
+                        './img/modelo 14.jpg',
+                        './img/modelo 15.jpg',
+                        './img/modelo 16.jpg',
+                        './img/modelo 17.jpeg',
+                        './img/modelo 18.jpeg',
+                        './img/modelo 19.jpg',
+                        './img/modelo 20.jpeg',
+                        './img/modelo 21.jpeg',
+                        './img/modelo 22.jpg',
+                        './img/modelo 23.jpg',
+                        './img/modelo 24.jpg',
+                        './img/modelo 25.jpeg',
+                        './img/modelo 26.jpg',
+                        './img/modelo 27.jpeg',
+                        './img/modelo 28.jpeg',
+                        './img/modelo 29.jpeg',
+                        './img/modelo 30.jpeg',
+                        './img/modelo 31.jpg'
+                    ];
 
-                    <div class="gallery-overlay">
-                        <h4>Portão Moderno</h4>
-                        <p>Modelo residencial premium</p>
-                    </div>
-                </div>
+                    document.write(
+                        imagens.map((img, index) => `
 
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#img2">
-                    <div class="zoom-icon">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                        <div class="gallery-item">
 
-                    <img
-                        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
+                            <div class="zoom-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
 
-                    <div class="gallery-overlay">
-                        <h4>Estrutura Metálica</h4>
-                        <p>Acabamento profissional</p>
-                    </div>
-                </div>
+                            <img src="${img}" alt="Portão ${index + 1}">
 
-                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#img3">
-                    <div class="zoom-icon">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                            <div class="gallery-overlay">
+                                <h4>Portão Moderno ${index + 1}</h4>
+                                <p>Modelo residencial premium</p>
+                            </div>
 
-                    <img
-                        src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop">
+                        </div>
 
-                    <div class="gallery-overlay">
-                        <h4>Projeto Sob Medida</h4>
-                        <p>Estruturas personalizadas</p>
-                    </div>
-                </div>
+                        `).join('')
+                    );
+                </script>
 
             </div>
+
         </div>
+
     </section>
 
-    <div class="modal fade" id="img1" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                <div class="modal-body">
-                    <img
-                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="img2" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                <div class="modal-body">
-                    <img
-                        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="img3" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                <div class="modal-body">
-                    <img
-                        src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1600&auto=format&fit=crop">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <footer>
+
         <div class="container">
-            <p>© 2026 Mil Serralheria - Todos os direitos reservados.</p>
+
+            <p>
+                © 2026 Mil Serralheria - Todos os direitos reservados.
+            </p>
+
         </div>
+
     </footer>
 
     <a href="https://wa.me/5511999999999" class="whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- MODAL -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+
+            <div class="modal-content">
+
+                <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+                <div class="modal-body">
+
+                    <img id="modalImage"
+                        src=""
+                        alt="Imagem ampliada">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        document.addEventListener('click', function (e) {
+
+            const item = e.target.closest('.gallery-item');
+
+            if (!item) return;
+
+            const img = item.querySelector('img');
+
+            const modalImage = document.getElementById('modalImage');
+
+            modalImage.src = img.src;
+
+            const modal = new bootstrap.Modal(
+                document.getElementById('imageModal')
+            );
+
+            modal.show();
+
+        });
+
+    </script>
 
 </body>
 
 </html>
+```
