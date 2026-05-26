@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <link rel="icon" type="image/png" href="./img/mil-serralheria-logo.png?v=2">
+
     <style>
         * {
             margin: 0;
@@ -24,10 +26,15 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #fff;
             color: #222;
             overflow-x: hidden;
+            width: 100%;
         }
 
         /* NAVBAR */
@@ -48,6 +55,7 @@
             color: #222 !important;
             font-weight: 500;
             margin-left: 15px;
+            transition: 0.3s;
         }
 
         .nav-link:hover {
@@ -58,17 +66,26 @@
 
         .hero {
             min-height: 70vh;
+            width: 100%;
+            overflow: hidden;
 
             background:
                 linear-gradient(rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0.7)),
-                url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+                url('https://www.tomastec.com.br/template/imagens/palavras-chave/fabrica-de-estruturas-metalicas.jpg');
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
 
             display: flex;
             align-items: center;
+            justify-content: center;
+
             text-align: center;
             color: #fff;
-            padding: 80px 0;
+
+            padding: 80px 20px;
         }
 
         .hero h1 {
@@ -242,6 +259,21 @@
 
         @media(max-width:768px) {
 
+            body {
+                overflow-x: hidden;
+            }
+
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+
+            .hero {
+                min-height: 60vh;
+                background-position: center center;
+                background-size: cover;
+                padding: 60px 20px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -261,6 +293,10 @@
             .gallery-img {
                 height: 250px;
             }
+
+            .structure-card img {
+                height: 240px;
+            }
         }
     </style>
 </head>
@@ -271,9 +307,10 @@
     <nav class="navbar navbar-expand-lg">
 
         <div class="container">
-
             <a class="navbar-brand" href="index.html">
-                Mil Serralheria
+
+                <img src="./img/mil-serralheria-logo.webp" alt="Mil Serralheria" style="height:60px;">
+
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -331,7 +368,7 @@
                 empresas e indústrias.
             </p>
 
-            <a href="https://wa.me/5511999999999" class="btn-main">
+            <a href="https://wa.me/5512988760414" class="btn-main">
 
                 <i class="fab fa-whatsapp"></i>
                 Solicitar Orçamento
@@ -442,7 +479,7 @@
                 da Mil Serralheria.
             </p>
 
-            <a href="https://wa.me/5511999999999" class="btn-main">
+            <a href="https://wa.me/5512988760414" class="btn-main">
 
                 <i class="fab fa-whatsapp"></i>
                 Falar no WhatsApp
@@ -468,7 +505,7 @@
     </footer>
 
     <!-- WHATSAPP -->
-    <a href="https://wa.me/5511999999999" class="whatsapp">
+    <a href="https://wa.me/5512988760414" class="whatsapp">
 
         <i class="fab fa-whatsapp"></i>
 

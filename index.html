@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <link rel="icon" type="image/png" href="./img/mil-serralheria-logo.png?v=2">
+
     <style>
         * {
             margin: 0;
@@ -19,10 +21,45 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* ===== CORREÇÃO MOBILE ===== */
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
             background: #fff;
             color: #222;
-            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* REMOVE TREMIDA NO MOBILE */
+
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* REMOVE EFEITO AZUL AO TOCAR */
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* EVITA ZOOM AUTOMÁTICO */
+
+        input,
+        textarea,
+        button,
+        select,
+        a {
+            touch-action: manipulation;
         }
 
         body.menu-open {
@@ -31,11 +68,10 @@
 
         section {
             scroll-margin-top: 20px;
+            padding: 100px 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        /* NAVBAR */
 
         .navbar {
             background: #ffffffee !important;
@@ -51,6 +87,11 @@
             color: #198754 !important;
         }
 
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+
         .nav-link {
             color: #222 !important;
             font-weight: 500;
@@ -62,14 +103,23 @@
             color: #198754 !important;
         }
 
+        /* HERO */
+
         .hero {
-            min-height: 100svh;
+            min-height: 100vh;
             padding-top: 40px;
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.7)),
+                url('https://naport.com.br/wp-content/uploads/2025/08/IMG_2869-250KB-rotated.jpg') center/cover no-repeat;
+
             display: flex;
             align-items: center;
             color: #fff;
             text-align: left;
+
+            overflow: hidden;
         }
 
         .hero h1 {
@@ -84,6 +134,8 @@
             color: #ddd;
             max-width: 700px;
         }
+
+        /* BOTÃO */
 
         .btn-main {
             background: #198754;
@@ -104,9 +156,7 @@
             color: #fff;
         }
 
-        section {
-            padding: 100px 0;
-        }
+        /* TITULOS */
 
         .section-title {
             text-align: center;
@@ -123,6 +173,8 @@
             color: #666;
             margin-top: 10px;
         }
+
+        /* SOBRE */
 
         .about-img img,
         .gallery img {
@@ -146,6 +198,8 @@
             margin-bottom: 15px;
             line-height: 1.8;
         }
+
+        /* SERVIÇOS */
 
         .service-card {
             background: #fff;
@@ -172,6 +226,8 @@
             margin-bottom: 15px;
         }
 
+        /* STATS */
+
         .stats {
             background: #198754;
             color: #fff;
@@ -185,6 +241,8 @@
             font-size: 3rem;
             font-weight: 800;
         }
+
+        /* TESTIMONIAL */
 
         .testimonial {
             background: #f8f9fa;
@@ -200,6 +258,8 @@
             font-weight: 700;
         }
 
+        /* CONTATO */
+
         .contact-box {
             background: #f8f9fa;
             padding: 50px;
@@ -213,12 +273,16 @@
             border: 1px solid #ddd;
         }
 
+        /* FOOTER */
+
         footer {
             background: #111;
             color: #bbb;
             padding: 40px 0;
             text-align: center;
         }
+
+        /* WHATSAPP */
 
         .whatsapp {
             position: fixed;
@@ -244,9 +308,16 @@
             color: #fff;
         }
 
+        /* RESPONSIVO */
+
         @media(max-width:768px) {
+
             .navbar-brand {
                 font-size: 1.4rem;
+            }
+
+            .navbar-brand img {
+                height: 50px;
             }
 
             .navbar {
@@ -254,11 +325,8 @@
             }
 
             .hero {
-                padding-top: 40px;
-            }
-
-            .hero {
                 text-align: center;
+                padding-top: 40px;
             }
 
             .hero h1 {
@@ -276,6 +344,11 @@
             .contact-box {
                 padding: 30px 20px;
             }
+
+            .btn-main {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -284,7 +357,11 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">Mil Serralheria</a>
+            <a class="navbar-brand" href="index.html">
+
+                <img src="./img/mil-serralheria-logo.webp" alt="Mil Serralheria" style="height:60px;">
+
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -292,8 +369,8 @@
 
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                     <li class="nav-item"><a class="nav-link" href="estruturas.html">Estruturas Metálicas</a></li>
-                     <li class="nav-item"><a class="nav-link" href="modelos.html">Modelos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estruturas.html">Estruturas Metálicas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="modelos.html">Modelos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
@@ -308,11 +385,11 @@
 
             <p>
                 A Mil Serralheria oferece soluções modernas em portões,
-                estruturas metálicas, corrimãos, coberturas e projetos personalizados.
+                estruturas metálicas, coberturas e projetos personalizados.
                 Atendimento rápido e acabamento profissional.
             </p>
 
-            <a href="https://wa.me/5511999999999" class="btn-main">
+            <a href="https://wa.me/5512988760414" class="btn-main">
                 <i class="fab fa-whatsapp"></i> Solicitar Orçamento
             </a>
         </div>
@@ -354,8 +431,7 @@
 
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 about-img">
-                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop"
-                        alt="">
+                    <img src="./img/solda.jfif" alt="">
                 </div>
 
                 <div class="col-lg-6 about-text">
@@ -363,7 +439,7 @@
 
                     <p>
                         Trabalhamos com fabricação e instalação de portões,
-                        grades, corrimãos, coberturas e estruturas metálicas.
+                        grades, coberturas e estruturas metálicas.
                     </p>
 
                     <p>
@@ -371,7 +447,7 @@
                         em todos os projetos.
                     </p>
 
-                    <a href="https://wa.me/5511999999999" class="btn-main">
+                    <a href="https://wa.me/5512988760414" class="btn-main">
                         Falar no WhatsApp
                     </a>
                 </div>
@@ -413,13 +489,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <i class="fas fa-stairs"></i>
-                        <h4>Corrimãos</h4>
-                        <p>Design moderno e alta durabilidade.</p>
-                    </div>
-                </div>
+
 
                 <div class="col-md-6 col-lg-4">
                     <div class="service-card">
@@ -450,20 +520,46 @@
             </div>
 
             <div class="row g-4 gallery">
+
+                <!-- PORTÕES -->
                 <div class="col-md-4">
-                    <img
-                        src="./img/modelo 10.jpg">
+                    <a href="modelos.html" class="gallery-link">
+
+                        <img src="./img/modelo 10.jpg" alt="Portões">
+
+                        <div class="gallery-overlay">
+
+                        </div>
+
+                    </a>
                 </div>
 
+                <!-- FACHADAS -->
                 <div class="col-md-4">
-                    <img
-                        src="./img/fachadas.jpeg">
+                    <a href="estruturas.html#fachadas" class="gallery-link">
+
+                        <img src="./img/fachadas.jpeg" alt="Fachadas">
+
+                        <div class="gallery-overlay">
+
+                        </div>
+
+                    </a>
                 </div>
 
+                <!-- ESTRUTURAS -->
                 <div class="col-md-4">
-                    <img
-                        src="./img/estrutura 2.jpeg">
+                    <a href="estruturas.html" class="gallery-link">
+
+                        <img src="./img/estrutura 2.jpeg" alt="Estruturas">
+
+                        <div class="gallery-overlay">
+
+                        </div>
+
+                    </a>
                 </div>
+
             </div>
         </div>
     </section>
@@ -477,21 +573,67 @@
             </div>
 
             <div class="contact-box">
+
                 <div class="row g-5 align-items-center">
 
+                    <!-- INFORMAÇÕES -->
                     <div class="col-lg-5">
+
                         <h3 class="mb-4">Informações</h3>
 
-                        <p><i class="fas fa-phone text-success"></i> (11) 99999-9999</p>
-                        <p><i class="fas fa-envelope text-success"></i> contato@milserralheria.com.br</p>
-                        <p><i class="fas fa-location-dot text-success"></i> São Paulo - SP</p>
-                        <p><i class="fab fa-instagram text-success"></i> @milserralheria</p>
+                        <p>
+                            <i class="fab fa-whatsapp text-success"></i>
+                            WhatsApp: (12) 98876-0414
+                        </p>
+
+                        <p>
+                            <i class="fas fa-location-dot text-success"></i>
+                            Travessa Capitingal, 100 – Residencial Gazzo
+                        </p>
+
+                        <p>
+                            <i class="fas fa-city text-success"></i>
+                            São José dos Campos - SP
+                        </p>
+
+                        <p>
+                            <i class="fas fa-map text-success"></i>
+                            CEP: 12236-582
+                        </p>
+
+                        <p>
+                            <i class="fas fa-globe text-success"></i>
+                            São Paulo - Brasil
+                        </p>
+
+                        <p>
+                            <i class="fab fa-facebook-f text-success"></i>
+                            Facebook: Mil Serralheria
+                        </p>
+
+                        <p>
+                            <i class="fas fa-building text-success"></i>
+                            Mil Serralheria ME
+                        </p>
+
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn-main border-0">
+                            <i class="fab fa-whatsapp"></i>
+                            Solicitar Orçamento
+                        </button>
                     </div>
 
-                    
-
                 </div>
+
+                </form>
+
             </div>
+
+        </div>
+
+        </div>
+
         </div>
     </section>
 
@@ -501,7 +643,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/5511999999999" class="whatsapp">
+    <a href="https://wa.me/5512988760414" class="whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
