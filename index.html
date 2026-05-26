@@ -350,6 +350,165 @@
                 text-align: center;
             }
         }
+
+        /* ===== GALERIA OVERLAY + BOTÃO ===== */
+
+        .gallery .gallery-link {
+            position: relative;
+            display: block;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .gallery .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.35s ease;
+        }
+
+        .gallery .gallery-link:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery .gallery-link img {
+            transition: transform 0.4s ease;
+        }
+
+        .gallery .gallery-link:hover img {
+            transform: scale(1.08);
+        }
+
+        /* BOTÃO SAIBA MAIS */
+        .btn-saiba-mais {
+            background: #198754;
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            transform: translateY(10px);
+            opacity: 0;
+        }
+
+        /* animação do botão aparecer */
+        .gallery .gallery-link:hover .btn-saiba-mais {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .btn-saiba-mais:hover {
+            background: #146c43;
+            color: #fff;
+        }
+
+        /* ===== MOBILE: mostrar botão sempre ===== */
+        @media (max-width: 768px) {
+            .gallery .gallery-overlay {
+                opacity: 1;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            .btn-saiba-mais {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== AJUSTES GALERIA (NOVO) ===== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .gallery {
+            margin-top: 20px;
+        }
+
+        .gallery .gallery-link {
+            position: relative;
+            display: block;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .gallery .gallery-link img {
+            width: 100%;
+            border-radius: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery .gallery-link:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.35s ease;
+        }
+
+        .gallery .gallery-link:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .btn-saiba-mais {
+            background: #198754;
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            transform: translateY(10px);
+            opacity: 0;
+        }
+
+        .gallery .gallery-link:hover .btn-saiba-mais {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .btn-saiba-mais:hover {
+            background: #146c43;
+            color: #fff;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .gallery .gallery-overlay {
+                opacity: 1;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            .btn-saiba-mais {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
@@ -395,28 +554,42 @@
         </div>
     </section>
 
-    <section class="stats">
+    <section id="galeria">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-3 stat-box">
-                    <h2>+500</h2>
-                    <p>Projetos realizados</p>
+
+            <div class="section-title">
+                <h2>Galeria de Projetos</h2>
+                <p>Trabalhos realizados pela Mil Serralheria</p>
+            </div>
+
+            <div class="row g-4 gallery">
+
+                <!-- PORTÕES -->
+                <div class="col-md-4">
+                    <a href="modelos.html" class="gallery-link">
+
+                        <img src="./img/modelo 10.jpg" alt="Portões">
+
+                        <div class="gallery-overlay">
+                            <span class="btn-saiba-mais">Saiba mais</span>
+                        </div>
+
+                    </a>
                 </div>
 
-                <div class="col-md-3 stat-box">
-                    <h2>+10</h2>
-                    <p>Anos de experiência</p>
+                <!-- ESTRUTURAS -->
+                <div class="col-md-4">
+                    <a href="estruturas.html" class="gallery-link">
+
+                        <img src="./img/estrutura 2.jpeg" alt="Estruturas">
+
+                        <div class="gallery-overlay">
+                            <span class="btn-saiba-mais">Saiba mais</span>
+                        </div>
+
+                    </a>
                 </div>
 
-                <div class="col-md-3 stat-box">
-                    <h2>100%</h2>
-                    <p>Clientes satisfeitos</p>
-                </div>
-
-                <div class="col-md-3 stat-box">
-                    <h2>24h</h2>
-                    <p>Resposta rápida</p>
-                </div>
             </div>
         </div>
     </section>
@@ -511,58 +684,6 @@
         </div>
     </section>
 
-    <section id="galeria">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Galeria de Projetos</h2>
-                <p>Trabalhos realizados pela Mil Serralheria</p>
-            </div>
-
-            <div class="row g-4 gallery">
-
-                <!-- PORTÕES -->
-                <div class="col-md-4">
-                    <a href="modelos.html" class="gallery-link">
-
-                        <img src="./img/modelo 10.jpg" alt="Portões">
-
-                        <div class="gallery-overlay">
-
-                        </div>
-
-                    </a>
-                </div>
-
-                <!-- FACHADAS -->
-                <div class="col-md-4">
-                    <a href="estruturas.html#fachadas" class="gallery-link">
-
-                        <img src="./img/fachadas.jpeg" alt="Fachadas">
-
-                        <div class="gallery-overlay">
-
-                        </div>
-
-                    </a>
-                </div>
-
-                <!-- ESTRUTURAS -->
-                <div class="col-md-4">
-                    <a href="estruturas.html" class="gallery-link">
-
-                        <img src="./img/estrutura 2.jpeg" alt="Estruturas">
-
-                        <div class="gallery-overlay">
-
-                        </div>
-
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <section id="contato">
         <div class="container">
